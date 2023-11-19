@@ -4,12 +4,13 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QPixmap, QColor, QPen, QBrush
 from random import randint
+from ui import Ui_MainWindow
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('ui.ui', self)
+        self.setupUi(self)
 
         self.label.setPixmap(QPixmap(800, 600))
         self.pushButton.clicked.connect(self.paint)
