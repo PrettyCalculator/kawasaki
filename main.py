@@ -18,10 +18,11 @@ class MyWidget(QMainWindow):
         self.label.setPixmap(QPixmap(800, 600))
         x, y = [randint(5, 500) for i in range(2)]
         r = randint(5, 300)
+        color = QColor(randint(0, 255), randint(0, 255), randint(0, 255))
 
-        pen = QPen(QColor(255, 255, 0))
+        pen = QPen(QColor(color))
         pen.setWidth(3)
-        brush = QBrush(QColor(255, 255, 0))
+        brush = QBrush(color)
         painter = QPainter(self.label.pixmap())
         painter.setBrush(brush)
         painter.setPen(pen)
